@@ -1,0 +1,68 @@
+<html>
+<head>
+    <title>News Results</title>
+    <style>
+        h1 {
+            font-size: 50pt;
+              font-family: "Raleway";
+              text-shadow: 3px 3px #999999;
+              text-align: center;
+              color: white;
+              margin-top: -1px;
+              margin-bottom: 30px;
+        }
+
+        body {
+            border: 10px solid #383736;
+            background-color: #2e2e2d;
+            color: white;
+        }
+
+        .headlines {
+            background-color: black;
+        }
+
+        .title {
+            font-family: "American Typewriter";
+            text-align: center;
+            font-size: 30px;
+            margin: 10px;
+            padding-top: 20px;
+        }
+
+        #flexing {
+            display: flex;
+        }
+
+        .image {
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+
+        #data {
+            font-size: 17px;
+            font-family: "American Typewriter";
+        }
+
+
+    </style>
+</head>
+<body>
+	<div class="heading"> <h1> This is what we have for you based on your search </h1> </div>
+    {% for result in results %}
+	    <div class ='headlines'>
+            <div class="title"> {{result.title}} </div></br>
+            <div id="flexing">
+                <div class="image"> <img src="{{result.photo_url}}" height="180" width="300"></div></br>
+                <div id="data">
+                    <div class="date"> <b>Date published:</b> {{result.date}} </div></br>
+                    <div class="source"> <b>By:</b> {{result.source}}</div></br>
+                    <div class="author"> <b>Author:</b> {{result.author}} </div></br>
+                    <div class="description"> <b>Summary:</b> {{result.description}}</div></br>
+                    <div class="link"> <a href = "" + {{result.url}}></a></div></br>
+                </div>
+            </div>
+        </div> </br>
+    {% endfor %}
+</body>
+</html>

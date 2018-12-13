@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Infohunter</title>
+        <style>
+            h1 {
+              font-size: 50pt;
+              font-family: "Raleway";
+              text-shadow: 5px 5px #999999;
+              text-align: center;
+              color: white;
+              margin-top: -1px;
+              margin-bottom: -0.0000001px;
+            }
+
+            .heading {
+              padding: 10px;
+            }
+
+            .top {
+              background-color: rgba(0, 0, 0, 0.5);
+              padding-bottom: 200px;
+            }
+
+            body {
+                border: 10px solid #383736;
+                background-color: #333332;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            #main {
+              margin-top: 40px;
+            }
+
+            .mini {
+              display: flex;
+            }
+
+            legend {
+              padding: 10px;
+            }
+
+            #mainleg {
+              font-size: 45pt;
+              font-family: "Dosis";
+              text-align: center;
+              color: white;
+              padding: 30px;
+            }
+
+            .input {
+              text-align: center;
+              padding: 20px;
+              color: white;
+              font-family: "Dosis";
+              font-size: 35px;
+              width: 230px;
+            }
+
+            .options {
+              text-align: center;
+              width: 200px;
+              height: 40px;
+              margin: 10px;
+              color: white;
+              background-color: #2e2e2d;
+              font-size: 20px;
+              font-family: "Dosis"
+            }
+
+            #but {
+              text-align: center;
+              width: 280px;
+              height: 70px;
+              margin: 10px;
+              color: white;
+              font-family: "American Typewriter";
+              font-size: 24pt;
+              background-color: #2e2e2d;
+              border: 1px solid #383736;
+              border-radius: 15px;
+            }
+
+            #search {
+              text-align: center;
+              margin: 20px;
+            }
+
+            #but:hover {
+              background-color: grey;
+            }
+
+            #keyword {
+                border-radius: 5px;
+                height: 35px;
+            }
+
+            #appname {
+                font-family: "SignPainter";
+                color: white;
+                text-decoration: underline;
+                font-size: 80pt;
+                text-align: center;
+                margin-top: 10px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="top">
+          <div class="heading"> <h1> Personalize your news feed with </h1> <div id="appname"> Infohunter </div> </div>
+          <div id="main">
+              <div class="controls">
+                  <fieldset>
+                      <form action="results" method="post">
+                      <legend id="mainleg">How can WE help YOU today?</legend>
+                      <div class="mini">
+                            <fieldset>
+                              <div class="input">
+                                <legend>Keyword</legend>
+                                  <input class="options" id = "keyword" name="keyword" type="text" value="Football">
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                              <div class = "input">
+                              <legend>News Source</legend>
+                                <select class="options" name="source">
+                                  <option values="nothing"> All Sources </option>
+                                    <option value="abc-news"> ABC News </option>
+                                    <option value="abc-news-au"> ABC News (AU) </option>
+                                    <option value="australian-financial-review"> Australian Financial Review </option>
+                                    <option selected="selected" value="bbc-news"> BBC News </option>
+                                    <option value="bleacher-report"> Bleacher Report </option>
+                                    <option value="bloomberg"> Bloomberg </option>
+                                    <option value="business-insider"> Business Insider </option>
+                                    <option value="business-insider-uk"> Business Insider (UK) </option>
+                                    <option value="buzzfeed"> Buzzfeed </option>
+                                    <option value="cbs-news"> CBS News </option>
+                                    <option value="crypto-coins-news"> Crypto Coins News </option>
+                                    <option value="daily-mail"> Daily Mail </option>
+                                    <option value="engadget"> Engadget </option>
+                                    <option value="espn"> ESPN </option>
+                                    <option value="financial-post"> Financial Post </option>
+                                    <option value="fortune"> Fortune </option>
+                                    <option value="fox-news"> Fox News </option>
+                                    <option value="hacker-news"> Hacker News </option>
+                                    <option value="independent"> Independent </option>
+                                    <option value="medical-news-today"> Medical News Today </option>
+                                    <option value="metro"> Metro </option>
+                                    <option value="msnbc"> MSNBC </option>
+                                    <option value="national-review"> National Review </option>
+                                    <option value="new-scientist"> New Scientist </option>
+                                    <option value="news-com-au"> News.com.au </option>
+                                    <option value="new-york-magazine"> New York Magazine </option>
+                                    <option value="Polygon"> Polygon </option>
+                                    <option value="techcrunch"> TechCrunch </option>
+                                    <option value="techcrunch-cn"> TechCrunch (CN) </option>
+                                    <option value="the-guardian-au"> The Guardian (AU) </option>
+                                    <option value="the-guardian-uk"> The Guardian (UK) </option>
+                                    <option value="the-hindu"> The Hindu </option>
+                                    <option value="the-irish-time"> The Irish Time </option>
+                                    <option value="the-sport-bible"> The Sport Bible </option>
+                                    <option value="the-wall-street-journal"> The Wall Street Journal </option>
+                                    <option value="the-washington-post"> The Washington Post </option>
+                                    <option value="time"> Time </option>
+                                    <option value="wired"> Wires </option>
+
+                                </select>
+                              </div>
+                            </fieldset>
+                            <fieldset>
+                              <div class ="input">
+                              <legend>Date Published</legend>
+                                <select class="options" name="date">
+                                  <option value="1"> Last 24 hours </option>
+                                  <option value="7"> Last Week </option>
+                                  <option value="30" selected="selected"> Last Month </option>
+                                  <option value="365"> Last Year </option>
+                                </select>
+                              </div>
+                            </fieldset>
+                          <fieldset>
+                              <div class ="input">
+                              <legend>Sort By</legend>
+                                <select class="options" name="sort">
+                                  <option selected="selected" value="newdate"> Newest First </option>
+                                  <option value="olddate"> Oldest First </option>
+                                  <option value="author"> Author </option>
+                                </select>
+                              </div>
+                            </fieldset>
+                          </div>
+                          <div id="search">
+                        <input id="but" type="submit" value="Search" name="gobtn"/></div>
+                     </form>
+                  </fieldset>
+              </div>
+          </div>
+        </div>
+    </body>
+</html>
